@@ -1,5 +1,9 @@
 let fs = require("fs");
-
+/**
+ * Returns the score of a letter (char) according to the Scrabble game rules.
+ * @param {char} char a letter or character to be used for calculating the score.
+ * @returns {number} an integer score for the passed character.
+ */
 function getCharScore(char) {
     const onePointLetters = "EAIONRTLSU";
     const twoPointLetters = "DG";
@@ -32,7 +36,11 @@ function getCharScore(char) {
     return 0;
 }
 
-//Helper function to calculate score for a single word
+/**
+ * Returns the score of a single word according to the Scrabble game rules.
+ * @param {string} inputWord a word to be used for calculating the score.
+ * @returns {number} an integer score for the passed word.
+ */
 function getSingleWordScore(inputWord) {
     let word = inputWord.toUpperCase();
     let score = 0;
@@ -43,11 +51,21 @@ function getSingleWordScore(inputWord) {
 
 }
 
-function removeSpecialChars(bookContent) {
+/**
+ * Returns a clean string with all the special characters replaced by an empty string.
+ * @param {string} data - a multiline string with each line containing words or strings.
+ * @returns {string} string data - multiline string without special characters.
+ */
+function removeSpecialChars(data) {
     const specialCharRegex = /[.,"();*#\[\]\/\/?!@%_“$:”0-9‘]/g;
-    return bookContent.replace(specialCharRegex, " ");
+    return data.replace(specialCharRegex, " ");
 }
 
+/**
+ * Reads a book and prints out the word with the highest score and its score according to the Scrabble game rules.
+ * @param {string} bookPath a path of the book to read
+ * @returns {number} an integer score for the passed word.
+ */
 function getHighestScoringWord(bookPath) {
 
     fs.readFile(bookPath, "utf8", (error, data) => {
@@ -69,5 +87,4 @@ function getHighestScoringWord(bookPath) {
 
     });
 }
-
 getHighestScoringWord("war_and_peace.txt");
