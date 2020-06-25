@@ -7,7 +7,7 @@ Three Point Letters = B, C, M and P\
 Four Point Letters = F, H, V, W and Y\
 Five Point Letter = K\
 Eight Point Letters = J and X\
-Ten Point Letters = Q and Z;\
+Ten Point Letters = Q and Z\
 
 ### An example of counting a score for a word "ADRIANO"
 score = 1 + 2 + 1 + 1 + 1 + 1 + 1 = 8
