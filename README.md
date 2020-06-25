@@ -12,5 +12,7 @@ Ten Point Letters = Q and Z
 ### An example of counting a score for a word "ADRIANO"
 score = 1 + 2 + 1 + 1 + 1 + 1 + 1 = 8
 
+### Requirements
+1. Node.js
 ### Running  this code
 node scrabbleScores.js
